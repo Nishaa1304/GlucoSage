@@ -1,11 +1,15 @@
 import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useUser } from '../../context/UserContext';
+import { getTranslations } from '../../i18n/translations';
 import PageHeader from '../../components/PageHeader';
 import BottomNav from '../../components/BottomNav';
 import Loader from '../../components/Loader';
 
 const FoodScan = () => {
   const navigate = useNavigate();
+  const { user } = useUser();
+  const t = getTranslations(user?.language || 'en');
   const [isCapturing, setIsCapturing] = useState(false);
   const [stream, setStream] = useState<MediaStream | null>(null);
   const [capturedImage, setCapturedImage] = useState<string | null>(null);
@@ -22,23 +26,43 @@ const FoodScan = () => {
     };
   }, []);
 
+  // Effect to handle video element when stream changes
+  useEffect(() => {
+    if (stream && videoRef.current && isCameraOn) {
+      console.log('Attaching stream to video element');
+      videoRef.current.srcObject = stream;
+      videoRef.current.play().catch(err => {
+        console.error('Error auto-playing video:', err);
+      });
+    }
+  }, [stream, isCameraOn]);
+
   const startCamera = async () => {
     try {
-      const mediaStream = await navigator.mediaDevices.getUserMedia({
-        video: { facingMode: 'environment', width: { ideal: 1280 }, height: { ideal: 720 } },
+      setCameraError(null);
+      console.log('Requesting camera access...');
+      
+      // Try to get user-facing camera first (most devices default to this)
+      const constraints = {
+        video: {
+          width: { ideal: 1920 },
+          height: { ideal: 1080 }
+        },
         audio: false
-      });
+      };
+
+      const mediaStream = await navigator.mediaDevices.getUserMedia(constraints);
+      
+      console.log('Camera access granted');
+      console.log('Stream tracks:', mediaStream.getTracks());
+      console.log('Video tracks:', mediaStream.getVideoTracks());
       
       setStream(mediaStream);
       setIsCameraOn(true);
-      setCameraError(null);
       
-      if (videoRef.current) {
-        videoRef.current.srcObject = mediaStream;
-      }
     } catch (error) {
       console.error('Camera access error:', error);
-      setCameraError('Unable to access camera. Please allow camera permissions or upload an image.');
+      setCameraError(`Unable to access camera: ${(error as Error).message}`);
       setIsCameraOn(false);
     }
   };
@@ -48,6 +72,9 @@ const FoodScan = () => {
       stream.getTracks().forEach(track => track.stop());
       setStream(null);
       setIsCameraOn(false);
+    }
+    if (videoRef.current) {
+      videoRef.current.srcObject = null;
     }
   };
 
@@ -109,16 +136,16 @@ const FoodScan = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-20">
+    <div className="min-h-screen pb-20 relative overflow-hidden" style={{ backgroundImage: 'url(/background.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
       <PageHeader 
-        title="Scan Your Food" 
-        subtitle="Capture or upload your meal photo"
+        title={t.foodScan.title}
+        subtitle={t.foodScan.subtitle}
         showBack={true}
       />
 
-      <div className="p-6">
+      <div className="max-w-3xl mx-auto p-6">
         {/* Camera Preview */}
-        <div className="relative bg-gray-900 rounded-2xl overflow-hidden shadow-2xl mb-6" style={{ aspectRatio: '4/3' }}>
+        <div className="relative bg-gray-900 rounded-2xl overflow-hidden shadow-2xl mb-6" style={{ aspectRatio: '4/3', minHeight: '400px' }}>
           {isCameraOn && !capturedImage ? (
             <>
               <video
@@ -126,7 +153,7 @@ const FoodScan = () => {
                 autoPlay
                 playsInline
                 muted
-                className="w-full h-full object-cover"
+                className="absolute top-0 left-0 w-full h-full object-cover"
               />
               <canvas ref={canvasRef} className="hidden" />
               
@@ -135,14 +162,20 @@ const FoodScan = () => {
               
               {/* Camera info overlay */}
               <div className="absolute bottom-4 left-4 right-4 bg-black/50 backdrop-blur-sm rounded-lg p-3">
-                <p className="text-white text-sm text-center">Position your plate in the frame</p>
+                <p className="text-white text-sm text-center">{t.foodScan.positionPlate}</p>
+                {videoRef.current && (
+                  <p className="text-white/70 text-xs text-center mt-1">
+                    Stream: {stream?.active ? 'Active ✓' : 'Connecting...'} | 
+                    Video: {videoRef.current.videoWidth}x{videoRef.current.videoHeight}
+                  </p>
+                )}
               </div>
               
               {/* Camera control button */}
               <button
                 onClick={toggleCamera}
                 className="absolute top-4 right-4 bg-red-500 hover:bg-red-600 text-white p-3 rounded-full shadow-lg transition-colors"
-                title="Turn off camera"
+                title={t.foodScan.turnOffCamera}
               >
                 <span className="text-xl">📷❌</span>
               </button>
@@ -151,13 +184,13 @@ const FoodScan = () => {
             <div className="absolute inset-0 flex items-center justify-center p-6">
               <div className="text-center">
                 <div className="text-6xl mb-4">📷</div>
-                <p className="text-white text-lg mb-2">Camera is Off</p>
-                <p className="text-white/70 text-sm mb-4">Turn on camera to scan your food</p>
+                <p className="text-white text-lg mb-2">{t.foodScan.cameraOff}</p>
+                <p className="text-white/70 text-sm mb-4">{t.foodScan.turnOnCamera.toLowerCase()}</p>
                 <button
                   onClick={toggleCamera}
                   className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-xl font-semibold transition-colors shadow-lg"
                 >
-                  Turn On Camera
+                  {t.foodScan.turnOnCamera}
                 </button>
                 {cameraError && (
                   <p className="text-red-400 text-sm mt-3">{cameraError}</p>
@@ -168,7 +201,7 @@ const FoodScan = () => {
           
           {isCapturing && (
             <div className="absolute inset-0 bg-black/80 flex items-center justify-center">
-              <Loader size="large" text="Analyzing..." />
+              <Loader size="large" text={t.foodScan.analyzing} />
             </div>
           )}
           
@@ -182,12 +215,11 @@ const FoodScan = () => {
           <div className="flex items-start gap-3">
             <span className="text-2xl">💡</span>
             <div>
-              <h3 className="font-semibold text-blue-900 mb-2">Tips for best results:</h3>
+              <h3 className="font-semibold text-blue-900 mb-2">{t.foodScan.tipsTitle}</h3>
               <ul className="text-sm text-blue-800 space-y-1">
-                <li>• Ensure good lighting</li>
-                <li>• Show the entire plate</li>
-                <li>• Avoid shadows on food</li>
-                <li>• Or upload a clear photo from gallery</li>
+                {t.foodScan.tips.map((tip, index) => (
+                  <li key={index}>• {tip}</li>
+                ))}
               </ul>
             </div>
           </div>
@@ -205,7 +237,7 @@ const FoodScan = () => {
             }`}
           >
             <span className="text-2xl">{isCameraOn ? '📷❌' : '📷✅'}</span>
-            {isCameraOn ? 'Turn Off Camera' : 'Turn On Camera'}
+            {isCameraOn ? t.foodScan.turnOffCamera : t.foodScan.turnOnCamera}
           </button>
           
           <button
@@ -214,7 +246,7 @@ const FoodScan = () => {
             className="w-full bg-primary-600 text-white py-6 rounded-2xl text-lg font-semibold hover:bg-primary-700 active:scale-95 transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
           >
             <span className="text-2xl">📸</span>
-            {isCapturing ? 'Analyzing...' : 'Capture Photo'}
+            {isCapturing ? t.foodScan.analyzing : t.foodScan.capturePhoto}
           </button>
           
           <button
@@ -223,7 +255,7 @@ const FoodScan = () => {
             className="w-full bg-white border-3 border-primary-600 text-primary-600 py-6 rounded-2xl text-lg font-semibold hover:bg-primary-50 active:scale-95 transition-all shadow-md disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
           >
             <span className="text-2xl">🖼️</span>
-            Browse & Upload Photo
+            {t.foodScan.browseUpload}
           </button>
           
           {/* Hidden file input */}

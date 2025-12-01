@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 17
+names: ['Idly', 'bisibele bath', 'chapathi', 'chicken biriyani', 'dosa', 'kesari bath', 'khara pongal', 'lemon rice', 'non veg meals', 'poori', 'puliyogare', 'rave idli', 'shavige payasa', 'upma', 'vangi bath', 'veg meals', 'veg palav']
+
+roboflow:
+  workspace: foodrecognition-lilg0
+  project: food-recognition-wzmwi
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/foodrecognition-lilg0/food-recognition-wzmwi/dataset/2

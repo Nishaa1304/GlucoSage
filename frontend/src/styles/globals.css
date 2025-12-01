@@ -4,9 +4,26 @@
 
 @layer base {
   body {
-    @apply bg-gray-50 text-gray-900 antialiased;
+    @apply bg-gradient-to-br from-slate-900 via-teal-900 to-emerald-900 text-gray-900 antialiased min-h-screen;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    background-attachment: fixed;
+  }
+
+  /* Ambient background pattern */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(circle at 20% 30%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(34, 197, 94, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
   }
 
   h1 {
@@ -26,45 +43,132 @@
   }
 
   button {
-    @apply transition-all duration-200;
+    @apply transition-all duration-300;
   }
 }
 
 @layer components {
+  /* Glassmorphism card */
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-glass;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.05)
+    );
+  }
+
+  .glass-card-solid {
+    @apply bg-white/95 backdrop-blur-md border border-aqua-200/30 rounded-2xl shadow-glass;
+  }
+
+  /* Neon glow buttons */
   .btn-primary {
-    @apply bg-primary-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-700 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply bg-gradient-to-r from-aqua-500 to-primary-600 text-white px-6 py-3 rounded-xl font-medium 
+           shadow-glow hover:shadow-glow-lg hover:scale-105 active:scale-95 
+           disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300;
   }
 
   .btn-secondary {
-    @apply bg-white text-primary-600 border-2 border-primary-600 px-6 py-3 rounded-lg font-medium hover:bg-primary-50 active:scale-95;
+    @apply bg-gradient-to-r from-mint-500 to-mint-600 text-white px-6 py-3 rounded-xl font-medium 
+           shadow-glow-mint hover:shadow-glow-lg hover:scale-105 active:scale-95
+           transition-all duration-300;
+  }
+
+  .btn-glucose {
+    @apply bg-gradient-to-r from-glucose-500 to-medical-600 text-white px-6 py-3 rounded-xl font-medium 
+           shadow-glow-glucose hover:shadow-glow-lg hover:scale-105 active:scale-95
+           transition-all duration-300;
   }
 
   .btn-ghost {
-    @apply bg-transparent text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 active:scale-95;
+    @apply bg-white/10 backdrop-blur-md border border-white/30 text-white px-6 py-3 rounded-xl font-medium 
+           hover:bg-white/20 hover:shadow-glow active:scale-95 transition-all duration-300;
   }
 
+  .btn-outline {
+    @apply bg-transparent border-2 border-aqua-400 text-aqua-400 px-6 py-3 rounded-xl font-medium 
+           hover:bg-aqua-400/10 hover:shadow-glow-aqua active:scale-95 transition-all duration-300;
+  }
+
+  /* Card variants */
   .card {
-    @apply bg-white rounded-xl shadow-md p-6;
+    @apply glass-card-solid p-6 hover:shadow-glow transition-all duration-300;
   }
 
+  .card-glow {
+    @apply glass-card-solid p-6 shadow-glow hover:shadow-glow-lg transition-all duration-300;
+  }
+
+  .card-glucose {
+    @apply glass-card-solid p-6 border-glucose-300/50 hover:shadow-glow-glucose transition-all duration-300;
+  }
+
+  .card-mint {
+    @apply glass-card-solid p-6 border-mint-300/50 hover:shadow-glow-mint transition-all duration-300;
+  }
+
+  /* Input with glow */
   .input {
-    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+    @apply w-full px-4 py-3 bg-white/90 border border-aqua-300/50 rounded-xl 
+           focus:outline-none focus:ring-2 focus:ring-aqua-400 focus:border-transparent 
+           focus:shadow-glow-aqua transition-all duration-300;
   }
 
+  .input-glow {
+    @apply w-full px-4 py-3 bg-white/10 backdrop-blur-md border border-white/30 rounded-xl text-white
+           placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-aqua-400 
+           focus:border-transparent focus:shadow-glow-aqua transition-all duration-300;
+  }
+
+  /* Badge with glow */
   .badge {
     @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
   }
 
   .badge-success {
-    @apply badge bg-green-100 text-green-800;
+    @apply badge bg-mint-100 text-mint-800 border border-mint-300/50;
   }
 
   .badge-warning {
-    @apply badge bg-yellow-100 text-yellow-800;
+    @apply badge bg-yellow-100 text-yellow-800 border border-yellow-300/50;
   }
 
   .badge-danger {
-    @apply badge bg-red-100 text-red-800;
+    @apply badge bg-red-100 text-red-800 border border-red-300/50;
+  }
+
+  .badge-glow {
+    @apply badge bg-aqua-500/20 text-aqua-300 border border-aqua-400/50 shadow-glow-sm;
+  }
+
+  /* Glucose drop shape */
+  .glucose-drop {
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+  }
+
+  /* Floating animation helper */
+  .float-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Pulse glow effect */
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  /* Gradient text */
+  .text-gradient-health {
+    @apply bg-gradient-to-r from-aqua-400 to-mint-400 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-glucose {
+    @apply bg-gradient-to-r from-glucose-400 to-medical-500 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-medical {
+    @apply bg-gradient-to-r from-primary-400 to-medical-500 bg-clip-text text-transparent;
   }
 }
 
@@ -79,6 +183,25 @@
 
   .shadow-soft {
     box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Scrollbar styling */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #06b6d4, #22c55e);
+    border-radius: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #22d3ee, #4ade80);
   }
 }
 
@@ -95,7 +218,132 @@
 }
 
 .animate-fadeIn {
-  animation: fadeIn 0.3s ease-out;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Logo entrance animations */
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) rotate(-10deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.6s ease-out forwards;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(6, 182, 212, 0.6);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  animation: shimmer 3s infinite;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  background-size: 1000px 100%;
+}
+
+/* Particle effect background */
+.particle-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.particle-bg::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: 
+    radial-gradient(2px 2px at 20% 30%, rgba(6, 182, 212, 0.3), transparent),
+    radial-gradient(2px 2px at 60% 70%, rgba(34, 197, 94, 0.3), transparent),
+    radial-gradient(2px 2px at 50% 50%, rgba(168, 85, 247, 0.3), transparent),
+    radial-gradient(2px 2px at 80% 10%, rgba(236, 72, 153, 0.3), transparent),
+    radial-gradient(2px 2px at 90% 60%, rgba(6, 182, 212, 0.3), transparent),
+    radial-gradient(2px 2px at 33% 90%, rgba(34, 197, 94, 0.3), transparent);
+  background-size: 200% 200%;
+  animation: particle-float 15s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes particle-float {
+  0%, 100% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
 }
 
 /* Accessibility */
@@ -111,7 +359,7 @@
   border-width: 0;
 }
 
-/* Loading spinner */
+/* Loading spinner with glow */
 @keyframes spin {
   to {
     transform: rotate(360deg);
@@ -120,4 +368,12 @@
 
 .animate-spin {
   animation: spin 1s linear infinite;
+}
+
+.spinner-glow {
+  border: 3px solid rgba(6, 182, 212, 0.2);
+  border-top-color: #06b6d4;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.5);
 }

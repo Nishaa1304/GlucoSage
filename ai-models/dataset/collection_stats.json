@@ -1,0 +1,25 @@
+{
+  "total_images": 0,
+  "classes": {
+    "biryani": 0,
+    "chole": 0,
+    "curry": 0,
+    "dal": 0,
+    "dosa": 0,
+    "idli": 0,
+    "mixed": 0,
+    "paneer_dish": 0,
+    "paratha": 0,
+    "raita": 0,
+    "rice": 0,
+    "roti": 0,
+    "sabzi": 0,
+    "salad": 0,
+    "samosa": 0,
+    "sweet": 0,
+    "thali": 0
+  },
+  "total_classes": 17,
+  "target_per_class": 300,
+  "target_total": 5100
+}

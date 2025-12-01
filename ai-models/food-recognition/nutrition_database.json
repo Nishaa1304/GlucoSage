@@ -1,0 +1,845 @@
+{
+  "nutritionDatabase": {
+    "roti": {
+      "name": "Roti (Whole Wheat)",
+      "servingSize": "1 medium (40g)",
+      "carbs": 15.2,
+      "protein": 3.1,
+      "fat": 0.4,
+      "fiber": 2.7,
+      "calories": 71,
+      "glycemicIndex": 62,
+      "glycemicLoad": 9.4,
+      "portionSizes": {
+        "small": { "weight": 30, "carbs": 11.4, "gl": 7.1 },
+        "medium": { "weight": 40, "carbs": 15.2, "gl": 9.4 },
+        "large": { "weight": 50, "carbs": 19.0, "gl": 11.8 }
+      },
+      "timeImpact": {
+        "morning": 1.0,
+        "afternoon": 1.1,
+        "evening": 1.2,
+        "night": 1.3
+      },
+      "notes": "Whole wheat roti has lower GI than white flour. Best consumed with protein or fiber."
+    },
+    "chapati": {
+      "name": "Chapati (Thin Flatbread)",
+      "servingSize": "1 large (50g)",
+      "carbs": 18.0,
+      "protein": 3.5,
+      "fat": 0.5,
+      "fiber": 3.0,
+      "calories": 85,
+      "glycemicIndex": 58,
+      "glycemicLoad": 10.4,
+      "portionSizes": {
+        "small": { "weight": 35, "carbs": 12.6, "gl": 7.3 },
+        "medium": { "weight": 50, "carbs": 18.0, "gl": 10.4 },
+        "large": { "weight": 65, "carbs": 23.4, "gl": 13.6 }
+      },
+      "timeImpact": {
+        "morning": 1.0,
+        "afternoon": 1.1,
+        "evening": 1.2,
+        "night": 1.3
+      },
+      "notes": "Thinner than roti, slightly lower GI due to less thickness."
+    },
+    "paratha": {
+      "name": "Paratha (Layered Flatbread)",
+      "servingSize": "1 medium (60g)",
+      "carbs": 22.0,
+      "protein": 4.0,
+      "fat": 8.5,
+      "fiber": 2.5,
+      "calories": 180,
+      "glycemicIndex": 65,
+      "glycemicLoad": 14.3,
+      "portionSizes": {
+        "small": { "weight": 45, "carbs": 16.5, "gl": 10.7 },
+        "medium": { "weight": 60, "carbs": 22.0, "gl": 14.3 },
+        "large": { "weight": 80, "carbs": 29.3, "gl": 19.0 }
+      },
+      "timeImpact": {
+        "morning": 1.0,
+        "afternoon": 1.2,
+        "evening": 1.3,
+        "night": 1.4
+      },
+      "notes": "Higher fat content due to ghee/oil. Fat slows glucose spike but increases overall GL."
+    },
+    "poha": {
+      "name": "Poha (Flattened Rice)",
+      "servingSize": "1 bowl (100g)",
+      "carbs": 23.0,
+      "protein": 2.0,
+      "fat": 0.5,
+      "fiber": 1.5,
+      "calories": 110,
+      "glycemicIndex": 64,
+      "glycemicLoad": 14.7,
+      "portionSizes": {
+        "small": { "weight": 80, "carbs": 18.4, "gl": 11.8 },
+        "medium": { "weight": 100, "carbs": 23.0, "gl": 14.7 },
+        "large": { "weight": 130, "carbs": 29.9, "gl": 19.1 }
+      },
+      "timeImpact": {
+        "morning": 1.0,
+        "afternoon": 1.2,
+        "evening": 1.3,
+        "night": 1.4
+      },
+      "notes": "Popular breakfast item. Add peanuts and vegetables to lower GI."
+    },
+    "upma": {
+      "name": "Upma (Semolina)",
+      "servingSize": "1 bowl (120g)",
+      "carbs": 26.0,
+      "protein": 4.5,
+      "fat": 3.0,
+      "fiber": 2.0,
+      "calories": 150,
+      "glycemicIndex": 68,
+      "glycemicLoad": 17.7,
+      "portionSizes": {
+        "small": { "weight": 90, "carbs": 19.5, "gl": 13.3 },
+        "medium": { "weight": 120, "carbs": 26.0, "gl": 17.7 },
+        "large": { "weight": 150, "carbs": 32.5, "gl": 22.1 }
+      },
+      "timeImpact": {
+        "morning": 1.0,
+        "afternoon": 1.2,
+        "evening": 1.3,
+        "night": 1.4
+      },
+      "notes": "Moderate GI. Can be improved with vegetables and cashews."
+    },
+    "idli": {
+      "name": "Idli (Steamed Rice Cake)",
+      "servingSize": "2 pieces (100g)",
+      "carbs": 20.0,
+      "protein": 3.5,
+      "fat": 0.5,
+      "fiber": 1.0,
+      "calories": 100,
+      "glycemicIndex": 69,
+      "glycemicLoad": 13.8,
+      "portionSizes": {
+        "small": { "weight": 50, "carbs": 10.0, "gl": 6.9 },
+        "medium": { "weight": 100, "carbs": 20.0, "gl": 13.8 },
+        "large": { "weight": 150, "carbs": 30.0, "gl": 20.7 }
+      },
+      "timeImpact": {
+        "morning": 1.0,
+        "afternoon": 1.1,
+        "evening": 1.2,
+        "night": 1.3
+      },
+      "notes": "Fermented food, slightly easier to digest. Best with sambar (protein)."
+    },
+    "dosa": {
+      "name": "Dosa (Rice Crepe)",
+      "servingSize": "1 medium (120g)",
+      "carbs": 28.0,
+      "protein": 4.0,
+      "fat": 2.5,
+      "fiber": 1.5,
+      "calories": 145,
+      "glycemicIndex": 66,
+      "glycemicLoad": 18.5,
+      "portionSizes": {
+        "small": { "weight": 90, "carbs": 21.0, "gl": 13.9 },
+        "medium": { "weight": 120, "carbs": 28.0, "gl": 18.5 },
+        "large": { "weight": 150, "carbs": 35.0, "gl": 23.1 }
+      },
+      "timeImpact": {
+        "morning": 1.0,
+        "afternoon": 1.1,
+        "evening": 1.2,
+        "night": 1.3
+      },
+      "notes": "Fermented batter. Masala dosa has higher GL due to potato filling."
+    },
+    "dal": {
+      "name": "Dal (Lentil Curry)",
+      "servingSize": "1 katori (150g)",
+      "carbs": 12.0,
+      "protein": 9.0,
+      "fat": 2.0,
+      "fiber": 8.0,
+      "calories": 120,
+      "glycemicIndex": 30,
+      "glycemicLoad": 3.6,
+      "portionSizes": {
+        "small": { "weight": 100, "carbs": 8.0, "gl": 2.4 },
+        "medium": { "weight": 150, "carbs": 12.0, "gl": 3.6 },
+        "large": { "weight": 200, "carbs": 16.0, "gl": 4.8 }
+      },
+      "timeImpact": {
+        "morning": 1.0,
+        "afternoon": 1.0,
+        "evening": 1.0,
+        "night": 1.0
+      },
+      "notes": "Excellent protein source. Very low GI. Helps stabilize blood sugar."
+    },
+    "rice": {
+      "name": "White Rice (Steamed)",
+      "servingSize": "1 bowl (150g cooked)",
+      "carbs": 45.0,
+      "protein": 4.0,
+      "fat": 0.5,
+      "fiber": 0.6,
+      "calories": 205,
+      "glycemicIndex": 73,
+      "glycemicLoad": 32.9,
+      "portionSizes": {
+        "small": { "weight": 100, "carbs": 30.0, "gl": 21.9 },
+        "medium": { "weight": 150, "carbs": 45.0, "gl": 32.9 },
+        "large": { "weight": 200, "carbs": 60.0, "gl": 43.8 }
+      },
+      "timeImpact": {
+        "morning": 1.1,
+        "afternoon": 1.2,
+        "evening": 1.3,
+        "night": 1.5
+      },
+      "notes": "High GI. Consider brown rice (GI 68) or limit portion. Best with dal/vegetables."
+    },
+    "pulao": {
+      "name": "Pulao (Flavored Rice)",
+      "servingSize": "1 bowl (180g)",
+      "carbs": 48.0,
+      "protein": 5.5,
+      "fat": 6.0,
+      "fiber": 2.5,
+      "calories": 280,
+      "glycemicIndex": 70,
+      "glycemicLoad": 33.6,
+      "portionSizes": {
+        "small": { "weight": 120, "carbs": 32.0, "gl": 22.4 },
+        "medium": { "weight": 180, "carbs": 48.0, "gl": 33.6 },
+        "large": { "weight": 240, "carbs": 64.0, "gl": 44.8 }
+      },
+      "timeImpact": {
+        "morning": 1.1,
+        "afternoon": 1.2,
+        "evening": 1.3,
+        "night": 1.5
+      },
+      "notes": "Vegetables and ghee reduce GI slightly. Still high carb content."
+    },
+    "biryani": {
+      "name": "Biryani (Spiced Rice)",
+      "servingSize": "1 plate (250g)",
+      "carbs": 55.0,
+      "protein": 15.0,
+      "fat": 12.0,
+      "fiber": 3.0,
+      "calories": 400,
+      "glycemicIndex": 72,
+      "glycemicLoad": 39.6,
+      "portionSizes": {
+        "small": { "weight": 180, "carbs": 39.6, "gl": 28.5 },
+        "medium": { "weight": 250, "carbs": 55.0, "gl": 39.6 },
+        "large": { "weight": 350, "carbs": 77.0, "gl": 55.4 }
+      },
+      "timeImpact": {
+        "morning": 1.1,
+        "afternoon": 1.3,
+        "evening": 1.4,
+        "night": 1.6
+      },
+      "notes": "High carb and calorie. Protein from meat/paneer helps. Best for lunch only."
+    },
+    "sabzi": {
+      "name": "Sabzi (Vegetable Curry)",
+      "servingSize": "1 katori (150g)",
+      "carbs": 8.0,
+      "protein": 3.0,
+      "fat": 4.0,
+      "fiber": 4.5,
+      "calories": 85,
+      "glycemicIndex": 35,
+      "glycemicLoad": 2.8,
+      "portionSizes": {
+        "small": { "weight": 100, "carbs": 5.3, "gl": 1.9 },
+        "medium": { "weight": 150, "carbs": 8.0, "gl": 2.8 },
+        "large": { "weight": 200, "carbs": 10.7, "gl": 3.7 }
+      },
+      "timeImpact": {
+        "morning": 1.0,
+        "afternoon": 1.0,
+        "evening": 1.0,
+        "night": 1.0
+      },
+      "notes": "Low GI, high fiber. Excellent for blood sugar control."
+    },
+    "curry": {
+      "name": "Curry (Gravy Dish)",
+      "servingSize": "1 katori (150g)",
+      "carbs": 10.0,
+      "protein": 8.0,
+      "fat": 7.0,
+      "fiber": 2.5,
+      "calories": 145,
+      "glycemicIndex": 45,
+      "glycemicLoad": 4.5,
+      "portionSizes": {
+        "small": { "weight": 100, "carbs": 6.7, "gl": 3.0 },
+        "medium": { "weight": 150, "carbs": 10.0, "gl": 4.5 },
+        "large": { "weight": 200, "carbs": 13.3, "gl": 6.0 }
+      },
+      "timeImpact": {
+        "morning": 1.0,
+        "afternoon": 1.0,
+        "evening": 1.1,
+        "night": 1.1
+      },
+      "notes": "Varies by ingredients. Paneer/chicken curry has more protein."
+    },
+    "fruits": {
+      "name": "Mixed Fruits",
+      "servingSize": "1 bowl (150g)",
+      "carbs": 20.0,
+      "protein": 1.0,
+      "fat": 0.3,
+      "fiber": 3.0,
+      "calories": 85,
+      "glycemicIndex": 55,
+      "glycemicLoad": 11.0,
+      "portionSizes": {
+        "small": { "weight": 100, "carbs": 13.3, "gl": 7.3 },
+        "medium": { "weight": 150, "carbs": 20.0, "gl": 11.0 },
+        "large": { "weight": 200, "carbs": 26.7, "gl": 14.7 }
+      },
+      "timeImpact": {
+        "morning": 0.9,
+        "afternoon": 1.0,
+        "evening": 1.1,
+        "night": 1.3
+      },
+      "notes": "GI varies by fruit. Banana (62), Apple (36), Orange (43). Best in morning."
+    },
+    "vegetables": {
+      "name": "Raw/Cooked Vegetables",
+      "servingSize": "1 plate (200g)",
+      "carbs": 10.0,
+      "protein": 3.5,
+      "fat": 0.5,
+      "fiber": 6.0,
+      "calories": 65,
+      "glycemicIndex": 25,
+      "glycemicLoad": 2.5,
+      "portionSizes": {
+        "small": { "weight": 150, "carbs": 7.5, "gl": 1.9 },
+        "medium": { "weight": 200, "carbs": 10.0, "gl": 2.5 },
+        "large": { "weight": 300, "carbs": 15.0, "gl": 3.8 }
+      },
+      "timeImpact": {
+        "morning": 1.0,
+        "afternoon": 1.0,
+        "evening": 1.0,
+        "night": 1.0
+      },
+      "notes": "Very low GI. Excellent fiber source. Eat unlimited amounts."
+    },
+    "bisibele_bath": {
+      "name": "Bisibele Bath (Rice-Lentil Mix)",
+      "servingSize": "1 bowl (150g)",
+      "carbs": 32.0,
+      "protein": 8.0,
+      "fat": 4.5,
+      "fiber": 4.0,
+      "calories": 190,
+      "glycemicIndex": 62,
+      "glycemicLoad": 19.8,
+      "portionSizes": {
+        "small": { "weight": 120, "carbs": 25.6, "gl": 15.9 },
+        "medium": { "weight": 150, "carbs": 32.0, "gl": 19.8 },
+        "large": { "weight": 180, "carbs": 38.4, "gl": 23.8 }
+      },
+      "timeImpact": {
+        "morning": 1.0,
+        "afternoon": 1.1,
+        "evening": 1.2,
+        "night": 1.3
+      },
+      "notes": "Combination of rice and dal. Good protein but high carbs."
+    },
+    "kesari_bath": {
+      "name": "Kesari Bath (Sweet Semolina)",
+      "servingSize": "1 bowl (100g)",
+      "carbs": 45.0,
+      "protein": 3.0,
+      "fat": 8.0,
+      "fiber": 1.0,
+      "calories": 260,
+      "glycemicIndex": 75,
+      "glycemicLoad": 33.8,
+      "portionSizes": {
+        "small": { "weight": 75, "carbs": 33.8, "gl": 25.3 },
+        "medium": { "weight": 100, "carbs": 45.0, "gl": 33.8 },
+        "large": { "weight": 130, "carbs": 58.5, "gl": 43.9 }
+      },
+      "timeImpact": {
+        "morning": 1.2,
+        "afternoon": 1.4,
+        "evening": 1.5,
+        "night": 1.6
+      },
+      "notes": "High sugar dessert. Avoid for diabetics or eat very small portions."
+    },
+    "pongal": {
+      "name": "Pongal (Rice-Lentil Porridge)",
+      "servingSize": "1 bowl (150g)",
+      "carbs": 28.0,
+      "protein": 7.5,
+      "fat": 5.0,
+      "fiber": 3.5,
+      "calories": 180,
+      "glycemicIndex": 60,
+      "glycemicLoad": 16.8,
+      "portionSizes": {
+        "small": { "weight": 120, "carbs": 22.4, "gl": 13.4 },
+        "medium": { "weight": 150, "carbs": 28.0, "gl": 16.8 },
+        "large": { "weight": 180, "carbs": 33.6, "gl": 20.2 }
+      },
+      "timeImpact": {
+        "morning": 1.0,
+        "afternoon": 1.1,
+        "evening": 1.2,
+        "night": 1.3
+      },
+      "notes": "Comfort food with good protein from dal. Best with ghee."
+    },
+    "lemon_rice": {
+      "name": "Lemon Rice",
+      "servingSize": "1 bowl (150g)",
+      "carbs": 35.0,
+      "protein": 3.5,
+      "fat": 3.0,
+      "fiber": 1.5,
+      "calories": 175,
+      "glycemicIndex": 70,
+      "glycemicLoad": 24.5,
+      "portionSizes": {
+        "small": { "weight": 120, "carbs": 28.0, "gl": 19.6 },
+        "medium": { "weight": 150, "carbs": 35.0, "gl": 24.5 },
+        "large": { "weight": 180, "carbs": 42.0, "gl": 29.4 }
+      },
+      "timeImpact": {
+        "morning": 1.0,
+        "afternoon": 1.2,
+        "evening": 1.3,
+        "night": 1.4
+      },
+      "notes": "High GI rice dish. Add protein side for balance."
+    },
+    "tamarind_rice": {
+      "name": "Tamarind Rice (Puliyogare)",
+      "servingSize": "1 bowl (150g)",
+      "carbs": 36.0,
+      "protein": 3.0,
+      "fat": 4.0,
+      "fiber": 2.0,
+      "calories": 185,
+      "glycemicIndex": 68,
+      "glycemicLoad": 24.5,
+      "portionSizes": {
+        "small": { "weight": 120, "carbs": 28.8, "gl": 19.6 },
+        "medium": { "weight": 150, "carbs": 36.0, "gl": 24.5 },
+        "large": { "weight": 180, "carbs": 43.2, "gl": 29.4 }
+      },
+      "timeImpact": {
+        "morning": 1.0,
+        "afternoon": 1.2,
+        "evening": 1.3,
+        "night": 1.4
+      },
+      "notes": "Tangy rice dish. Moderate GI with spices."
+    },
+    "payasam": {
+      "name": "Payasam (Sweet Pudding)",
+      "servingSize": "1 bowl (100g)",
+      "carbs": 40.0,
+      "protein": 4.0,
+      "fat": 6.0,
+      "fiber": 0.5,
+      "calories": 225,
+      "glycemicIndex": 72,
+      "glycemicLoad": 28.8,
+      "portionSizes": {
+        "small": { "weight": 75, "carbs": 30.0, "gl": 21.6 },
+        "medium": { "weight": 100, "carbs": 40.0, "gl": 28.8 },
+        "large": { "weight": 130, "carbs": 52.0, "gl": 37.4 }
+      },
+      "timeImpact": {
+        "morning": 1.3,
+        "afternoon": 1.4,
+        "evening": 1.5,
+        "night": 1.6
+      },
+      "notes": "High sugar dessert. Very limited portions for diabetics."
+    },
+    "vangi_bath": {
+      "name": "Vangi Bath (Eggplant Rice)",
+      "servingSize": "1 bowl (150g)",
+      "carbs": 34.0,
+      "protein": 4.0,
+      "fat": 4.5,
+      "fiber": 3.0,
+      "calories": 185,
+      "glycemicIndex": 65,
+      "glycemicLoad": 22.1,
+      "portionSizes": {
+        "small": { "weight": 120, "carbs": 27.2, "gl": 17.7 },
+        "medium": { "weight": 150, "carbs": 34.0, "gl": 22.1 },
+        "large": { "weight": 180, "carbs": 40.8, "gl": 26.5 }
+      },
+      "timeImpact": {
+        "morning": 1.0,
+        "afternoon": 1.1,
+        "evening": 1.2,
+        "night": 1.3
+      },
+      "notes": "Spiced rice with vegetables. Better than plain rice."
+    },
+    "puri": {
+      "name": "Puri (Deep Fried Bread)",
+      "servingSize": "2 pieces (60g)",
+      "carbs": 25.0,
+      "protein": 4.0,
+      "fat": 12.0,
+      "fiber": 1.5,
+      "calories": 220,
+      "glycemicIndex": 70,
+      "glycemicLoad": 17.5,
+      "portionSizes": {
+        "small": { "weight": 40, "carbs": 16.7, "gl": 11.7 },
+        "medium": { "weight": 60, "carbs": 25.0, "gl": 17.5 },
+        "large": { "weight": 80, "carbs": 33.3, "gl": 23.3 }
+      },
+      "timeImpact": {
+        "morning": 1.1,
+        "afternoon": 1.3,
+        "evening": 1.4,
+        "night": 1.5
+      },
+      "notes": "High fat from deep frying. Eat sparingly."
+    },
+    "mixed_meal": {
+      "name": "Mixed Meal (Thali/Meals)",
+      "servingSize": "1 plate (300g)",
+      "carbs": 45.0,
+      "protein": 15.0,
+      "fat": 10.0,
+      "fiber": 8.0,
+      "calories": 320,
+      "glycemicIndex": 58,
+      "glycemicLoad": 26.1,
+      "portionSizes": {
+        "small": { "weight": 250, "carbs": 37.5, "gl": 21.8 },
+        "medium": { "weight": 300, "carbs": 45.0, "gl": 26.1 },
+        "large": { "weight": 350, "carbs": 52.5, "gl": 30.5 }
+      },
+      "timeImpact": {
+        "morning": 1.0,
+        "afternoon": 1.0,
+        "evening": 1.1,
+        "night": 1.2
+      },
+      "notes": "Balanced meal with rice, dal, vegetables, curry. Good protein and fiber."
+    },
+    "paneer_curry": {
+      "name": "Paneer Curry",
+      "servingSize": "1 bowl (150g)",
+      "carbs": 8.0,
+      "protein": 12.0,
+      "fat": 15.0,
+      "fiber": 2.0,
+      "calories": 210,
+      "glycemicIndex": 35,
+      "glycemicLoad": 2.8,
+      "portionSizes": {
+        "small": { "weight": 100, "carbs": 5.3, "gl": 1.9 },
+        "medium": { "weight": 150, "carbs": 8.0, "gl": 2.8 },
+        "large": { "weight": 200, "carbs": 10.7, "gl": 3.7 }
+      },
+      "timeImpact": {
+        "morning": 1.0,
+        "afternoon": 1.0,
+        "evening": 1.0,
+        "night": 1.1
+      },
+      "notes": "High protein, low GI. Excellent for diabetics."
+    },
+    "raita": {
+      "name": "Raita (Yogurt Side)",
+      "servingSize": "1 bowl (100g)",
+      "carbs": 6.0,
+      "protein": 4.0,
+      "fat": 3.0,
+      "fiber": 0.5,
+      "calories": 65,
+      "glycemicIndex": 36,
+      "glycemicLoad": 2.2,
+      "portionSizes": {
+        "small": { "weight": 75, "carbs": 4.5, "gl": 1.6 },
+        "medium": { "weight": 100, "carbs": 6.0, "gl": 2.2 },
+        "large": { "weight": 125, "carbs": 7.5, "gl": 2.7 }
+      },
+      "timeImpact": {
+        "morning": 1.0,
+        "afternoon": 1.0,
+        "evening": 1.0,
+        "night": 1.0
+      },
+      "notes": "Probiotic rich, cooling. Very low GI, good for digestion."
+    },
+    "naan": {
+      "name": "Naan (Leavened Flatbread)",
+      "servingSize": "1 piece (90g)",
+      "carbs": 45.0,
+      "protein": 8.0,
+      "fat": 5.0,
+      "fiber": 2.0,
+      "calories": 260,
+      "glycemicIndex": 71,
+      "glycemicLoad": 32.0,
+      "portionSizes": {
+        "small": { "weight": 70, "carbs": 35.0, "gl": 24.9 },
+        "medium": { "weight": 90, "carbs": 45.0, "gl": 32.0 },
+        "large": { "weight": 110, "carbs": 55.0, "gl": 39.1 }
+      },
+      "timeImpact": {
+        "morning": 1.1,
+        "afternoon": 1.2,
+        "evening": 1.3,
+        "night": 1.4
+      },
+      "notes": "High GI white flour bread. Higher fat than roti. Eat sparingly."
+    },
+    "chole": {
+      "name": "Chole (Chickpea Curry)",
+      "servingSize": "1 bowl (150g)",
+      "carbs": 22.0,
+      "protein": 9.0,
+      "fat": 5.0,
+      "fiber": 7.0,
+      "calories": 165,
+      "glycemicIndex": 28,
+      "glycemicLoad": 6.2,
+      "portionSizes": {
+        "small": { "weight": 120, "carbs": 17.6, "gl": 4.9 },
+        "medium": { "weight": 150, "carbs": 22.0, "gl": 6.2 },
+        "large": { "weight": 180, "carbs": 26.4, "gl": 7.4 }
+      },
+      "timeImpact": {
+        "morning": 0.9,
+        "afternoon": 1.0,
+        "evening": 1.0,
+        "night": 1.1
+      },
+      "notes": "Excellent protein and fiber. Very low GI. Great for diabetics."
+    },
+    "rajma": {
+      "name": "Rajma (Kidney Bean Curry)",
+      "servingSize": "1 bowl (150g)",
+      "carbs": 20.0,
+      "protein": 8.5,
+      "fat": 4.0,
+      "fiber": 6.5,
+      "calories": 145,
+      "glycemicIndex": 24,
+      "glycemicLoad": 4.8,
+      "portionSizes": {
+        "small": { "weight": 120, "carbs": 16.0, "gl": 3.8 },
+        "medium": { "weight": 150, "carbs": 20.0, "gl": 4.8 },
+        "large": { "weight": 180, "carbs": 24.0, "gl": 5.8 }
+      },
+      "timeImpact": {
+        "morning": 0.9,
+        "afternoon": 1.0,
+        "evening": 1.0,
+        "night": 1.1
+      },
+      "notes": "Very low GI, high protein. One of the best foods for blood sugar control."
+    },
+    "gulab_jamun": {
+      "name": "Gulab Jamun (Sweet)",
+      "servingSize": "2 pieces (60g)",
+      "carbs": 50.0,
+      "protein": 2.0,
+      "fat": 8.0,
+      "fiber": 0.5,
+      "calories": 280,
+      "glycemicIndex": 78,
+      "glycemicLoad": 39.0,
+      "portionSizes": {
+        "small": { "weight": 40, "carbs": 33.3, "gl": 26.0 },
+        "medium": { "weight": 60, "carbs": 50.0, "gl": 39.0 },
+        "large": { "weight": 80, "carbs": 66.7, "gl": 52.0 }
+      },
+      "timeImpact": {
+        "morning": 1.4,
+        "afternoon": 1.5,
+        "evening": 1.6,
+        "night": 1.8
+      },
+      "notes": "Very high sugar dessert. Avoid completely or eat tiny portions only on special occasions."
+    },
+    "aloo_gobi": {
+      "name": "Aloo Gobi (Potato Cauliflower)",
+      "servingSize": "1 bowl (150g)",
+      "carbs": 18.0,
+      "protein": 3.0,
+      "fat": 6.0,
+      "fiber": 4.0,
+      "calories": 130,
+      "glycemicIndex": 55,
+      "glycemicLoad": 9.9,
+      "portionSizes": {
+        "small": { "weight": 120, "carbs": 14.4, "gl": 7.9 },
+        "medium": { "weight": 150, "carbs": 18.0, "gl": 9.9 },
+        "large": { "weight": 180, "carbs": 21.6, "gl": 11.9 }
+      },
+      "timeImpact": {
+        "morning": 1.0,
+        "afternoon": 1.1,
+        "evening": 1.1,
+        "night": 1.2
+      },
+      "notes": "Moderate GI due to potato. Good fiber from cauliflower."
+    }
+  },
+  "portionEstimation": {
+    "boundingBoxToWeight": {
+      "description": "Estimate food weight from bounding box area",
+      "formula": "weight = (box_area / reference_plate_area) * average_food_density",
+      "referenceValues": {
+        "standardPlate": 706.86,
+        "smallBowl": 314.16,
+        "largeBowl": 452.39
+      },
+      "densityFactors": {
+        "flatbread": 0.8,
+        "rice": 1.2,
+        "liquid": 1.0,
+        "solid": 1.5
+      }
+    },
+    "confidenceAdjustment": {
+      "high": { "min": 0.85, "multiplier": 1.0 },
+      "medium": { "min": 0.65, "multiplier": 1.1 },
+      "low": { "min": 0.40, "multiplier": 1.2 }
+    }
+  },
+  "mealCombinationRules": {
+    "thaliEffect": {
+      "description": "Multiple foods together can affect overall GI",
+      "rules": [
+        {
+          "combination": ["rice", "dal"],
+          "giReduction": 0.85,
+          "reason": "Protein in dal slows rice absorption"
+        },
+        {
+          "combination": ["roti", "sabzi"],
+          "giReduction": 0.90,
+          "reason": "Fiber in vegetables reduces GI"
+        },
+        {
+          "combination": ["biryani", "raita"],
+          "giReduction": 0.92,
+          "reason": "Fat in yogurt slows carb absorption"
+        },
+        {
+          "combination": ["poha", "peanuts"],
+          "giReduction": 0.88,
+          "reason": "Protein and fat from nuts"
+        }
+      ]
+    },
+    "sequenceEffect": {
+      "description": "Eating order matters",
+      "recommendations": [
+        "Eat vegetables/salad first (reduces overall spike by 15%)",
+        "Then protein (dal, curry)",
+        "Finally carbs (rice, roti)"
+      ]
+    }
+  },
+  "userProfileAdjustments": {
+    "activityLevel": {
+      "sedentary": { "multiplier": 1.2, "note": "Higher glucose response" },
+      "light": { "multiplier": 1.1, "note": "Slightly elevated" },
+      "moderate": { "multiplier": 1.0, "note": "Normal response" },
+      "active": { "multiplier": 0.9, "note": "Better glucose control" },
+      "veryActive": { "multiplier": 0.85, "note": "Excellent control" }
+    },
+    "diabetesType": {
+      "none": { "multiplier": 1.0 },
+      "prediabetic": { "multiplier": 1.15 },
+      "type1": { "multiplier": 1.25 },
+      "type2": { "multiplier": 1.3 }
+    },
+    "medicationEffect": {
+      "metformin": { "glReduction": 0.85, "note": "Reduces glucose absorption" },
+      "insulin": { "glReduction": 0.7, "note": "Direct glucose control" },
+      "sglt2": { "glReduction": 0.8, "note": "Increases glucose excretion" }
+    }
+  },
+  "adviceEngine": {
+    "lowRisk": {
+      "threshold": { "totalCarbs": "<40", "gl": "<20", "predictedSpike": "<140" },
+      "message": "Great choice! This meal should keep your blood sugar stable.",
+      "icon": "✅"
+    },
+    "moderateRisk": {
+      "threshold": { "totalCarbs": "40-60", "gl": "20-30", "predictedSpike": "140-180" },
+      "message": "Moderate impact. Consider adding protein or reducing portion size.",
+      "icon": "⚠️",
+      "suggestions": [
+        "Add a bowl of dal or curd",
+        "Reduce rice/roti portion by 30%",
+        "Take a 10-minute walk after eating"
+      ]
+    },
+    "highRisk": {
+      "threshold": { "totalCarbs": ">60", "gl": ">30", "predictedSpike": ">180" },
+      "message": "High carb load detected. This may cause significant glucose spike.",
+      "icon": "🚨",
+      "suggestions": [
+        "Reduce portion size by 40-50%",
+        "Replace white rice with brown rice or millet",
+        "Add 2 servings of vegetables",
+        "Consider splitting meal into two smaller meals",
+        "Monitor glucose closely after eating"
+      ]
+    }
+  },
+  "timeBasedRecommendations": {
+    "morning": {
+      "idealFoods": ["poha", "upma", "idli", "fruits"],
+      "avoid": ["biryani", "heavy curries"],
+      "note": "Morning insulin sensitivity is higher"
+    },
+    "afternoon": {
+      "idealFoods": ["thali", "dal-rice", "roti-sabzi"],
+      "avoid": [],
+      "note": "Best time for larger meals"
+    },
+    "evening": {
+      "idealFoods": ["light meals", "dosa", "upma"],
+      "avoid": ["large portions of rice"],
+      "note": "Reduce carb portions"
+    },
+    "night": {
+      "idealFoods": ["roti-sabzi", "dal", "vegetables"],
+      "avoid": ["rice", "biryani", "pulao"],
+      "note": "Avoid high-carb foods, can cause morning hyperglycemia"
+    }
+  }
+}

@@ -11,12 +11,20 @@ export const PERMISSIONS = [
   { id: 'camera', label: 'Camera Access', icon: '📷', required: true },
 ];
 
-export const SAMPLE_VOICE_COMMANDS = [
-  'What will my sugar be after lunch?',
-  'Scan my food',
-  'Show my health records',
-  'Log my morning medicine',
-];
+export const SAMPLE_VOICE_COMMANDS = {
+  en: [
+    'What will my sugar be after lunch?',
+    'Scan my food',
+    'Show my health records',
+    'Log my morning medicine',
+  ],
+  hi: [
+    'दोपहर के खाने के बाद मेरी शुगर क्या होगी?',
+    'मेरा खाना स्कैन करो',
+    'मेरे स्वास्थ्य रिकॉर्ड दिखाओ',
+    'मेरी सुबह की दवा लॉग करो',
+  ],
+};
 
 export const NAVIGATION_ITEMS = [
   { id: 'scan', label: 'Scan Food', icon: '🍽', path: '/scan' },

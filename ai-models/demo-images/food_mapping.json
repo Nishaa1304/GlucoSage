@@ -1,0 +1,112 @@
+{
+  "c6ae521837fa4d75c1376b986145a438": {
+    "name": "Idli with Sambar (6 pieces)",
+    "portion_size": "large",
+    "weight_grams": 320,
+    "nutrition": {
+      "calories": 380,
+      "carbohydrates": 68,
+      "protein": 16,
+      "fat": 6,
+      "fiber": 8,
+      "sugar": 3,
+      "sodium": 560
+    },
+    "glycemic_index": 52,
+    "glycemic_load": 35,
+    "glucose_prediction": {
+      "peak_time_minutes": 45,
+      "peak_increase_mg_dl": 58,
+      "duration_hours": 2.5,
+      "advice": "Excellent choice! Low glycemic load, high protein from sambar helps slow glucose absorption."
+    }
+  },
+  "d64ecbe527c78e8b040ed1b0ea2f4e8b": {
+    "name": "North Indian Thali",
+    "portion_size": "large",
+    "weight_grams": 580,
+    "nutrition": {
+      "calories": 780,
+      "carbohydrates": 105,
+      "protein": 28,
+      "fat": 26,
+      "fiber": 11,
+      "sugar": 6,
+      "sodium": 1020
+    },
+    "glycemic_index": 57,
+    "glycemic_load": 60,
+    "glucose_prediction": {
+      "peak_time_minutes": 65,
+      "peak_increase_mg_dl": 75,
+      "duration_hours": 3.2,
+      "advice": "High calorie and glycemic load. Consider eating half portion or skip the rice/roti to reduce glucose spike."
+    }
+  },
+  "09b95bd81b935d2cef2d9919c5aaa4e7": {
+    "name": "Vegetarian Thali",
+    "portion_size": "large",
+    "weight_grams": 550,
+    "nutrition": {
+      "calories": 720,
+      "carbohydrates": 98,
+      "protein": 24,
+      "fat": 22,
+      "fiber": 14,
+      "sugar": 9,
+      "sodium": 920
+    },
+    "glycemic_index": 54,
+    "glycemic_load": 53,
+    "glucose_prediction": {
+      "peak_time_minutes": 60,
+      "peak_increase_mg_dl": 68,
+      "duration_hours": 3.0,
+      "advice": "Balanced complete meal with high fiber. Good for diabetes management when portion controlled."
+    }
+  },
+  "8faadf0f752354850d51ad5bc664ffc3": {
+    "name": "South Indian Thali",
+    "portion_size": "large",
+    "weight_grams": 520,
+    "nutrition": {
+      "calories": 680,
+      "carbohydrates": 92,
+      "protein": 22,
+      "fat": 20,
+      "fiber": 12,
+      "sugar": 7,
+      "sodium": 840
+    },
+    "glycemic_index": 55,
+    "glycemic_load": 51,
+    "glucose_prediction": {
+      "peak_time_minutes": 55,
+      "peak_increase_mg_dl": 65,
+      "duration_hours": 2.8,
+      "advice": "Balanced meal with vegetables and dal. Fiber content helps manage glucose spike."
+    }
+  },
+  "191b6cc6f2095a9a26a770d721d7c8e5": {
+    "name": "Chicken Biryani",
+    "portion_size": "large",
+    "weight_grams": 350,
+    "nutrition": {
+      "calories": 450,
+      "carbohydrates": 60,
+      "protein": 18,
+      "fat": 15,
+      "fiber": 3,
+      "sugar": 2,
+      "sodium": 650
+    },
+    "glycemic_index": 58,
+    "glycemic_load": 35,
+    "glucose_prediction": {
+      "peak_time_minutes": 45,
+      "peak_increase_mg_dl": 65,
+      "duration_hours": 2.5,
+      "advice": "Moderate glycemic load. Consider portion control and pair with protein/vegetables."
+    }
+  }
+}

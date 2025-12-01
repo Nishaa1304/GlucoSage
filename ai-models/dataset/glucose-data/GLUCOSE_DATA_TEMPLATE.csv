@@ -1,0 +1,82 @@
+date,time,user_id,age,diabetes_type,medication,food_items,portion_size,total_carbs_g,pre_meal_glucose,glucose_1h,glucose_2h,activity_before,activity_after,notes
+2025-11-30,08:00,user001,35,type2,metformin,"idli (3), sambar (1 bowl)",medium,60,95,145,120,none,walking_15min,Felt energetic
+2025-11-30,13:00,user001,35,type2,metformin,"rice (2 cups), dal (1 cup), curry",large,90,105,180,135,walking_15min,sitting,Post-lunch drowsiness
+2025-11-30,20:00,user001,35,type2,metformin,"roti (3), paneer curry, salad",medium,75,100,155,125,sitting,walking_10min,Good dinner
+2025-12-01,08:30,user002,42,type1,insulin,"dosa (2), chutney",medium,55,110,165,130,none,cycling_20min,Morning workout helped
+2025-12-01,12:30,user002,42,type1,insulin,"biryani (1 plate), raita",large,95,115,195,145,cycling_20min,sitting,Needed extra insulin
+2025-12-01,19:00,user002,42,type1,insulin,"paratha (2), chole, salad",medium,70,105,160,125,sitting,walking_15min,Balanced meal
+2025-12-02,07:30,user003,28,prediabetes,none,"poha (1 plate), tea",small,45,90,130,105,yoga_30min,sitting,Light breakfast
+2025-12-02,13:00,user003,28,prediabetes,none,"thali (rice, dal, sabzi, roti)",large,100,95,175,130,sitting,walking_20min,Full lunch
+2025-12-02,20:30,user003,28,prediabetes,none,"samosa (2), chutney",small,40,100,145,115,walking_20min,sitting,Evening snack
+
+# INSTRUCTIONS FOR DATA COLLECTION
+# 
+# 1. REQUIRED FIELDS:
+#    - date: YYYY-MM-DD format
+#    - time: HH:MM (24-hour)
+#    - user_id: Anonymized ID (user001, user002, etc.)
+#    - age: In years
+#    - diabetes_type: type1 / type2 / prediabetes / gestational / none
+#    - medication: Current diabetes medication (metformin / insulin / glimepiride / none / combination)
+#    - food_items: Comma-separated list with quantities
+#    - portion_size: small / medium / large
+#    - total_carbs_g: Total carbohydrates in grams
+#    - pre_meal_glucose: Blood glucose before meal (mg/dL)
+#    - glucose_1h: Blood glucose 1 hour after meal (mg/dL)
+#    - glucose_2h: Blood glucose 2 hours after meal (mg/dL)
+#
+# 2. OPTIONAL BUT RECOMMENDED:
+#    - activity_before: none / walking_Xmin / running_Xmin / yoga_Xmin / cycling_Xmin / gym_Xmin
+#    - activity_after: Same format as activity_before
+#    - notes: Any relevant observations
+#
+# 3. DATA QUALITY GUIDELINES:
+#    - Measure glucose at EXACT times (before, +1h, +2h)
+#    - Use calibrated glucometer
+#    - Record immediately (don't rely on memory)
+#    - Include all food items eaten
+#    - Be honest about portions (we need real data!)
+#
+# 4. SAFETY REMINDERS:
+#    ⚠️ DO NOT change medication dosage for this study
+#    ⚠️ DO NOT test new foods without doctor approval (Type 1)
+#    ⚠️ Stop if glucose <70 or >300 mg/dL and seek medical help
+#    ⚠️ This is for AI training, not medical treatment
+#
+# 5. TARGET:
+#    - Minimum 100 meal records
+#    - Ideally 10+ different users
+#    - Mix of all meal times (breakfast/lunch/dinner/snacks)
+#    - Variety of food combinations
+#
+# 6. PRIVACY:
+#    - Use anonymous user IDs
+#    - Do not include names, emails, or identifying info
+#    - Store this file securely
+#
+# 7. SAMPLE SIZE PER USER:
+#    - Minimum: 10 meals per user
+#    - Ideal: 30+ meals per user (1 month of tracking)
+#    - More data = better predictions!
+#
+# 8. FOOD ITEM FORMAT:
+#    Examples:
+#    - "roti (3), dal (1 cup), rice (1 cup)"
+#    - "idli (4), sambar (1 bowl), chutney"
+#    - "biryani (1 plate), raita (1 bowl)"
+#    - "dosa (2), potato filling, chutney"
+#
+# 9. CARB ESTIMATION:
+#    Use these rough estimates:
+#    - 1 roti: 15g
+#    - 1 cup rice: 45g
+#    - 1 idli: 8g
+#    - 1 dosa: 20g
+#    - 1 paratha: 20g
+#    - 1 samosa: 20g
+#    See nutrition_database.json for more
+#
+# 10. NEXT STEPS:
+#     After collecting 100+ records:
+#     - Run: python scripts/validate_glucose_data.py
+#     - Then: python glucose-prediction/train_model.py

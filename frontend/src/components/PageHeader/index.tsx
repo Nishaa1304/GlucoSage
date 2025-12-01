@@ -14,18 +14,18 @@ const PageHeader: React.FC<PageHeaderProps> = ({ title, subtitle, showBack = fal
   const navigate = useNavigate();
 
   return (
-    <div className="bg-white shadow-sm border-b border-gray-200 px-4 py-4">
+    <div className="bg-white/80 backdrop-blur-xl shadow-glow border-b border-aqua-200/30 px-4 py-6 animate-slideDown">
       <div className="max-w-screen-xl mx-auto">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
             {showBack && (
               <button
                 onClick={() => navigate(-1)}
-                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                className="p-3 hover:bg-aqua-50 rounded-full transition-all duration-300 hover:shadow-glow-aqua hover:scale-110 group"
                 aria-label="Go back"
               >
                 <svg
-                  className="w-6 h-6 text-gray-700"
+                  className="w-6 h-6 text-aqua-600 group-hover:text-aqua-700 transition-colors"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -41,9 +41,9 @@ const PageHeader: React.FC<PageHeaderProps> = ({ title, subtitle, showBack = fal
             )}
             
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">{title}</h1>
+              <h1 className="text-2xl font-bold text-gradient-health animate-fadeIn">{title}</h1>
               {subtitle && (
-                <p className="text-sm text-gray-600 mt-1">{subtitle}</p>
+                <p className="text-sm text-gray-600 mt-1 animate-fadeIn" style={{ animationDelay: '0.1s' }}>{subtitle}</p>
               )}
             </div>
           </div>
@@ -51,7 +51,8 @@ const PageHeader: React.FC<PageHeaderProps> = ({ title, subtitle, showBack = fal
           {action && (
             <button
               onClick={action.onClick}
-              className="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors text-sm font-medium"
+              className="btn-primary text-sm animate-fadeIn"
+              style={{ animationDelay: '0.2s' }}
             >
               {action.label}
             </button>
