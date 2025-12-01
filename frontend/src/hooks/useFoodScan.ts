@@ -72,6 +72,7 @@ export const useFoodScan = () => {
             carbs: Math.round(totalNutrition.carbs),
             protein: Math.round(totalNutrition.protein),
             fat: Math.round(totalNutrition.fat),
+            fiber: Math.round(totalNutrition.fiber || 3),
             calories: Math.round(totalNutrition.calories),
             glycemicLoad,
           },
@@ -112,8 +113,8 @@ export const useFoodScan = () => {
       
       // Return basic result with error message
       const fallbackResult: FoodAnalysisResult = {
-        detectedItems: [{ name: 'Unknown Food', quantity: 150, unit: 'g', confidence: 50 }],
-        nutrition: { carbs: 30, protein: 10, fat: 5, calories: 200, glycemicLoad: 'Medium' },
+        detectedItems: [{ name: 'Unknown Food', quantity: 150, unit: 'g' }],
+        nutrition: { carbs: 30, protein: 10, fat: 5, fiber: 3, calories: 200, glycemicLoad: 'Medium' },
         sugarImpact: { prediction: 'Unable to analyze', peakTime: 'N/A', expectedRange: 'N/A' },
         advice: [
           `❌ ${errorMsg}`,

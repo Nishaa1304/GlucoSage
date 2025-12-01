@@ -18,7 +18,7 @@ const sampleDoctors = [
 ];
 
 const ABHA = () => {
-  const { user, updateUser } = useUser();
+  const { user } = useUser();
   const { abhaProfile, healthRecords, isLinked, isLoading, loadABHAData } = useABHA();
   const [voiceQuery, setVoiceQuery] = useState('');
   const [searchResults, setSearchResults] = useState(healthRecords);
@@ -26,7 +26,6 @@ const ABHA = () => {
   const [selectedDoctor, setSelectedDoctor] = useState<number | null>(null);
   const [shareSuccess, setShareSuccess] = useState(false);
   const [showLinkModal, setShowLinkModal] = useState(false);
-  const [linkingAbha, setLinkingAbha] = useState(false);
   const [abhaNumber, setAbhaNumber] = useState('');
   const [abhaAddress, setAbhaAddress] = useState('');
   
