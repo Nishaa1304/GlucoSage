@@ -26,6 +26,7 @@ const ABHA = () => {
   const [selectedDoctor, setSelectedDoctor] = useState<number | null>(null);
   const [shareSuccess, setShareSuccess] = useState(false);
   const [showLinkModal, setShowLinkModal] = useState(false);
+  const [linkingAbha, setLinkingAbha] = useState(false);
   const [abhaNumber, setAbhaNumber] = useState('');
   const [abhaAddress, setAbhaAddress] = useState('');
   
